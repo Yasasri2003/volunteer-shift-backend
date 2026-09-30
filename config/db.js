@@ -15,6 +15,9 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   dateStrings: true, // return DATE/DATETIME as strings, avoids JS timezone shifting bugs
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
 
 // Quick sanity check you can call on server startup
